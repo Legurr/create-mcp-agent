@@ -9,7 +9,7 @@ The project consists of:
 - **MCP Server** — exposes tools (`get_mr_diff`, `post_mr_discussion`, `get_jira_issue`, KB access)
 - **CLI Client** — orchestrates LLM interaction and tool calls
 - Integrations with **GitLab** and **Jira**
-- Knowledge Base (`.claude/`, `kb`)
+- Knowledge Base (`rules/`)
 
 ## Installation
 
