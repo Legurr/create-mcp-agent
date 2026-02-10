@@ -1,0 +1,31 @@
+{
+  "name": "create-mcp-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "bin": {
+    "create-mcp-agent": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "template"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "agent",
+    "cli",
+    "scaffold",
+    "create-mcp-agent"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "mcp-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "OMN Code Review Agent",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "review": "node -r dotenv/config dist/client.js",
+    "watch": "tsc -w",
+    "inspect": "npx @modelcontextprotocol/inspector node -r dotenv/config dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.3",
+    "axios": "^1.13.4",
+    "dotenv": "^17.2.3",
+    "openai": "^6.17.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.10",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
