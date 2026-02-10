@@ -4,12 +4,12 @@ import { z } from "zod";
 import { getReviewGuidelines, readKbFile } from "./tools/guidelines.js";
 import { getMrDiff, postMrDiscussion } from "./tools/gitlab.js";
 import { getJiraTicket } from "./tools/jira.js";
-import 'dotenv/config';import 'dotenv/config';
+import 'dotenv/config';
 
 let lastCachedDiffRefs: any = null;
 
 const server = new McpServer({
-  name: "omn-reviewer",
+  name: "reviewer",
   version: "1.0.0",
 });
 

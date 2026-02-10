@@ -56,9 +56,12 @@ function main() {
         const envTarget = path.join(TARGET_DIR, ".env");
 
         if (fs.existsSync(envExample)) {
-            fs.copyFileSync(envExample, envTarget);
-            console.log("Created .env file");
+            if (!fs.existsSync(envTarget)) {
+                fs.copyFileSync(envExample, envTarget);
+                console.log("Created .env file (copy of .env.example)");
+            }
         }
+
 
         console.log("\nDone! Your agent is ready.");
         console.log(`\nNext steps:\n  cd mcp-agent\n  npm install\n  npm run build\n`);

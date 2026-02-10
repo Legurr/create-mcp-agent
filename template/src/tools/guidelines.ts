@@ -4,7 +4,7 @@ import process from "node:process";
 
 const PROJECT_ROOT = process.cwd();
 const RULES_DIR = path.join(PROJECT_ROOT, "rules");
-const AGENTS_FILE = path.join(PROJECT_ROOT, "AGENTS.md");
+const AGENTS_FILE = path.join(PROJECT_ROOT, "AGENT.md");
 
 async function findMarkdownFiles(dir: string): Promise<string[]> {
     let results: string[] = [];
