@@ -21,7 +21,7 @@ function copyDirRecursive(src: string, dest: string) {
         const srcPath = path.join(src, entry.name);
         const destPath = path.join(dest, entry.name);
 
-        if (entry.name === "node_modules" || entry.name === ".git" || entry.name === "dist") {
+        if (entry.name === "node_modules" || entry.name === ".git" || entry.name === "dist" || entry.name === ".env.example") {
             continue;
         }
 
@@ -52,16 +52,13 @@ function main() {
     try {
         copyDirRecursive(TEMPLATE_DIR, TARGET_DIR);
 
-        const envExample = path.join(TARGET_DIR, ".env.example");
+        const envExample = path.join(TEMPLATE_DIR, ".env.example");
         const envTarget = path.join(TARGET_DIR, ".env");
 
         if (fs.existsSync(envExample)) {
-            if (!fs.existsSync(envTarget)) {
-                fs.copyFileSync(envExample, envTarget);
-                console.log("Created .env file (copy of .env.example)");
-            }
+            fs.copyFileSync(envExample, envTarget);
+            console.log("Created .env file");
         }
-
 
         console.log("\nDone! Your agent is ready.");
         console.log(`\nNext steps:\n  cd mcp-agent\n  npm install\n  npm run build\n`);
